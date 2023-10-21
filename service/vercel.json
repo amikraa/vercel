@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "src/main.py",
+            "use": "@vercel/python",
+            "config": { "maxlamdaSize": "3000mb", "runtime": "python3.9" }
+        },
+        {
+            "src": "build_files.sh",
+            "use": "@vercel/staric-build",
+            "config": {
+                "distDir": "staticsfiles_build"
+            }
+        }
+    ],
+    "routes":[
+        {
+            "src":"/static/(.*)",
+            "dest":"/static/$1"
+        },
+        {
+            "src":"/(.*)",
+            "dest":"src/main.py"
+        }
+    ]
+}
