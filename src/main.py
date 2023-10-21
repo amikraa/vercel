@@ -250,7 +250,7 @@ async def downloading(message: types.Message):
   keyboard.add(
       InlineKeyboardButton(text='.mp4', callback_data='download_mp4'),
       InlineKeyboardButton(text='.mp3', callback_data='download_mp3'),
-      InlineKeyboardButton(text='outlook', callback_data='download_jpg'))
+      InlineKeyboardButton(text='thumbnail', callback_data='download_jpg'))
 
   await message.answer(message.text, reply_markup=keyboard)
   await message.delete()
